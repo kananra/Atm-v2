@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <script src="./js/index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h2 class="Logo">Logo</h2>
+      <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <button class="btnLogin-popup">Login</button>
+      </nav>
+    </header>
+    <main>
+      <section id="login">
+        <div class="wrapper">
+          <span class="icon-close"
+            ><ion-icon name="close-outline"></ion-icon
+          ></span>
+          <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+              <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input class="name" type="text" required />
+                <label>admin</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"
+                  ><ion-icon name="lock-closed"></ion-icon
+                ></span>
+                <input class="password" type="password" required />
+                <label>admin</label>
+              </div>
+              <div class="remember-forgot">
+                <label><input type="checkbox" />Remember me</label>
+                <a href="#">Forgot Password?</a>
+              </div>
+              <button type="submit" class="btn">Login</button>
+              <div class="login-register">
+                <p>
+                  Don't have an account?
+                  <a href="#" class="register-link">Register</a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+              <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" required />
+                <label>Username</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" required />
+                <label>Name</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"
+                  ><ion-icon name="lock-closed"></ion-icon
+                ></span>
+                <input type="password" required />
+                <label>Password</label>
+              </div>
+              <div class="remember-forgot">
+                <label
+                  ><input type="checkbox" />I agree to the terms &
+                  condition</label
+                >
+              </div>
+              <button type="submit" class="btn">Register</button>
+              <div class="login-register">
+                <p>
+                  Already have an account?
+                  <a href="#" class="login-link">Login</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section id="main-page">
+        <div class="card-about">
+          <div class="balance">
+            <h3>Balance</h3>
+            <span class="money"></span>
+            <span><ion-icon name="cash-outline"></ion-icon></span><br />
+            <span class="send-btn"
+              ><ion-icon name="arrow-forward-circle-outline"></ion-icon
+            ></span>
+            <span class="withdraw-btn"
+              ><ion-icon name="arrow-down-circle-outline"></ion-icon
+            ></span>
+            <span class="deposit-btn"
+              ><ion-icon name="add-circle-outline"></ion-icon
+            ></span>
+            <span class="history-btn"><ion-icon name="list-circle-outline"></ion-icon></span>
+          </div>
+          <div class="check-money deposit">
+            <h3>Write your Amount</h3>
+            <input id="input-money" type="number" placeholder="Money"/>
+            <button onclick="getValue()" class="deposit-money" type="submit">Deposit</button>
+          </div>
+          <div class="check-money withdraw">
+            <h3>Write your Amount</h3>
+            <input id="withdraw-money" type="number" placeholder="Money"/>
+            <button onclick="withdrawValue()" class="deposit-money" type="submit">Withdraw</button>
+          </div>
+          <div class="send-money">
+            <div class="card-container">
+              <div class="front">
+                <div class="image">
+                  <img src="./assets/images/chip.png">
+                  <img src="./assets/images/visa.png">
+                </div>
+                <div class="card-number-box">################</div>
+                <div class="flexbox">
+                  <div class="box">
+                    <span>Card Holder</span>
+                    <div class="card-holder-name">
+                      Full Name
+                    </div>
+                  </div>
+                  <div class="box">
+                    <span>Expires</span>
+                    <div class="expiration">
+                      <span class="exp-month">mm</span>
+                      <span class="exp-year">yy</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="back">
+                <div class="stripe">
+                  <div class="box">
+                    <span>cvv</span>
+                    <div class="cvv-box">
+                      <img src="./assets/images/visa.png">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form>
+              <div class="inputBox">
+                <span>Card Number</span>
+                <input type="text" maxlength="16" class="card-number-input">
+              </div>
+              <div class="inputBox">
+                <span>Card Holder</span>
+                <input type="text" maxlength="16" class="card-holder-input">
+              </div>
+              <div class="inputBox">
+                <span>Money</span>
+                <input type="number" maxlength="16" class="card-amount-input">
+              </div>
+              <div class="flexbox">
+                <div class="inputBox">
+                  <span>Expiration MM</span>
+                 <select class="month-input">
+                  <option value="month" disabled>Month</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                 </select>
+                </div>
+                <div class="inputBox">
+                  <span>Expiration YY</span>
+                 <select class="year-input">
+                  <option value="year" selected disabled>Year</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                 </select>
+                </div>
+                <div class="inputBox">
+                  <span>CVV</span>
+                  <input type="text" maxlength="3" class="cvv-input">
+                </div>
+              </div>
+              <input type="submit" value="submit" class="submit-btn">
+            </form>
+          </div>
+        </div>
+        <div class="transition">
+          <h3>History</h3><br>
+          <p id="time"></p>
+          
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
